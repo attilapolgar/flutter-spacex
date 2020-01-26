@@ -7,27 +7,30 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(
-            icon: Icons.work,
-            text: 'Dashboard',
-            onTap: () => Navigator.pushReplacementNamed(
-                context, LayoutTutorial.routeName),
-          ),
-          _createDrawerItem(
-            icon: Icons.calendar_today,
-            text: 'Launches',
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, LaunchList.routeName),
-          ),
-          _createDrawerItem(
-            icon: Icons.verified_user,
-            text: 'About',
-          ),
-        ],
+      child: Container(
+        decoration: BoxDecoration(color: Colors.brown[900]),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            _createHeader(),
+            _createDrawerItem(
+              icon: Icons.work,
+              text: 'Dashboard',
+              onTap: () => Navigator.pushReplacementNamed(
+                  context, LayoutTutorial.routeName),
+            ),
+            _createDrawerItem(
+              icon: Icons.calendar_today,
+              text: 'Launches',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, LaunchList.routeName),
+            ),
+            _createDrawerItem(
+              icon: Icons.verified_user,
+              text: 'About',
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -43,6 +46,7 @@ class AppDrawer extends StatelessWidget {
         Positioned(
             bottom: 0,
             left: 0,
+            right: 0,
             child: Container(
               padding: EdgeInsets.all(6),
               decoration: BoxDecoration(color: Colors.black54),
@@ -58,17 +62,16 @@ class AppDrawer extends StatelessWidget {
 
   Widget _createDrawerItem(
       {IconData icon, String text, GestureTapCallback onTap}) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        size: 24,
+    return Container(
+      child: ListTile(
+        leading: Icon(icon, size: 24, color: Colors.white70),
+        title: Text(
+          text,
+          style: TextStyle(fontSize: 16, color: Colors.white70),
+        ),
+        onTap: onTap,
+        enabled: onTap != null,
       ),
-      title: Text(
-        text,
-        style: TextStyle(fontSize: 16),
-      ),
-      onTap: onTap,
-      enabled: onTap != null,
     );
   }
 }

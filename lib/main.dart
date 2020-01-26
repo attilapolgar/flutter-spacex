@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'SpaceX Unofficial',
-        theme: ThemeData(primaryColor: Colors.white),
+        theme: ThemeData(primaryColor: Colors.brown),
         initialRoute: LaunchList.routeName,
         routes: {
           LaunchList.routeName: (context) => LaunchList(),

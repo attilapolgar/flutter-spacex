@@ -23,6 +23,8 @@ dependencies:
   flutter_placeholder_textlines: ^1.0.0
   http: ^0.12.0+4
   transparent_image: ^1.0.0
+  timeago: ^2.0.25
+  intl: ^0.16.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
