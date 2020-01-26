@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_spacex/widgets/app-drawer.dart';
 
 class LayoutTutorial extends StatefulWidget {
   LayoutTutorial({Key key}) : super(key: key);
+
+  static const routeName = '/layoutTutorial';
 
   @override
   _LayoutTutorialState createState() => _LayoutTutorialState();
@@ -59,6 +62,7 @@ class _LayoutTutorialState extends State<LayoutTutorial> {
 
     return Scaffold(
         appBar: AppBar(title: Text('Flutter layout demo')),
+        drawer: AppDrawer(),
         body: ListView(
           children: <Widget>[
             Image.asset('images/lake.jpg',
