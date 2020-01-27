@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -18,23 +19,6 @@ class LaunchDetails extends StatefulWidget {
 }
 
 class _LaunchDetailsState extends State<LaunchDetails> {
-  // var data;
-
-  // Future<String> getData() async {
-  //   var response = await http.get(
-  //       Uri.encodeFull("https://api.spacexdata.com/v3/launches/80"),
-  //       headers: {"Accept": "Application/json"});
-
-  //   setState(() {
-  //     data = jsonDecode(response.body);
-  //   });
-  // }
-
-  // @override
-  // void initState() {
-  //   this.getData();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
@@ -43,7 +27,6 @@ class _LaunchDetailsState extends State<LaunchDetails> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Details')),
-      // drawer: AppDrawer(),
       body: Container(
           padding: EdgeInsets.all(24),
           child: Column(
@@ -57,10 +40,12 @@ class _LaunchDetailsState extends State<LaunchDetails> {
                       : Text('')),
               Container(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       data['mission_name'],
                       style: TextStyle(fontSize: 28),
+                      textAlign: TextAlign.left,
                     ),
                     Text(
                       data['details'] != null
